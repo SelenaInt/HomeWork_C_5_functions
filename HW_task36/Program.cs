@@ -14,17 +14,16 @@ int sumOfArrayElements = 0;
 
 for (int index = 0; index < array.Length; index++)
 {
-    array[index] = new Random().Next(-1000,1000);
+    array[index] = new Random().Next(1,1000);
+
+    if (index % 2 != 0)
+    {
+        sumOfArrayElements = sumOfArrayElements + array[index];
+        count++;
+    }
+    
 }
 Console.WriteLine($"Исходный Массив: [{String.Join("; ", array)}]");
 
-for (int index = 0; index < array.Length; index++)
-{
-    if (index % 2 != 0)
-    {
-        sumOfArrayElements+= array[index];
-        count++;
-    }
-}
 Console.WriteLine($"Количество Нечетных позиций в данном диапазоне: {count}");
 Console.WriteLine($"Сумма элементов на четных позициях: {sumOfArrayElements}");
