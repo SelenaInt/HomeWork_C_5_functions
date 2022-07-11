@@ -12,18 +12,30 @@ int[] array = new int[sizeArray];
 int count = 0;
 int sumOfArrayElements = 0;
 
-for (int index = 0; index < array.Length; index++)
+for (int index = 0; index < array.Length; index = index+2)
 {
-    array[index] = new Random().Next(1,1000);
+    array[index] = new Random().Next(-1000,1000);
 
-    if (index % 2 != 0)
-    {
-        sumOfArrayElements = sumOfArrayElements + array[index];
-        count++;
-    }
+    sumOfArrayElements = sumOfArrayElements + array[index];
+    count++;
+
+    // замена условия if на одно for
+    // if (index % 2 != 0)
+    // {
+    //     sumOfArrayElements = sumOfArrayElements + array[index];
+    //     count++;
+    // }
     
 }
 Console.WriteLine($"Исходный Массив: [{String.Join("; ", array)}]");
 
 Console.WriteLine($"Количество Нечетных позиций в данном диапазоне: {count}");
 Console.WriteLine($"Сумма элементов на четных позициях: {sumOfArrayElements}");
+
+// nt[] array = GetIntArray(20,-999,999);
+// int sum_odd_elements = 0;
+
+// for(int i=0;i<array.Length;i=i+2)
+// {
+//     sum_odd_elements += array[i];
+// }
